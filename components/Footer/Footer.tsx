@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -7,7 +8,13 @@ const Footer = () => {
       <div className="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
         <a href="#">
             <div className="flex items-center space-x-2">
-                <img className="w-auto h-7" src="/images/logo.png" alt="" />
+                <Image 
+                    src="/images/logo.png" 
+                    alt="Logo" 
+                    width={28}  // adjust based on your actual image size
+                    height={28} // adjust based on your actual image size
+                    className="w-auto h-7"
+                />
                 <span className="text-xl font-bold">emanualAI</span>
             </div>
         </a>
@@ -17,21 +24,21 @@ const Footer = () => {
             Home
           </a>
 
-          <a href="/services" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/services/" className="footer-link">
             Services
-          </a>
+          </Link>
 
-          <a href="/about" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
-            About Us
-          </a>
+          <Link href="/about/" className="footer-link">
+            About
+          </Link>
 
-          <a href="/contact" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/contact/" className="footer-link">
             Contact
-          </a>
+          </Link>
 
-          <a href="/about#careers" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/about#careers" className="footer-link">
             Careers
-          </a>
+          </Link>
 
           <a href="#privacy" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
             Privacy Policy

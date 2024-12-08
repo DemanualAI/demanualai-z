@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface Point {
     x: number;
@@ -340,9 +341,11 @@ const services = [
 
       {/* Hero Image */}
       <div className="h-[150px] w-full -z-10">
-        <img 
-          src="/images/bg.jpg" 
-          alt="Background" 
+        <Image 
+          src="/images/bg.jpg"
+          alt="Services Background"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
       </div>

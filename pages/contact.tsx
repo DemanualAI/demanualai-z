@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Alata } from 'next/font/google';
+import Image from 'next/image';
 
 interface Point {
     x: number;
@@ -386,9 +387,11 @@ export default function Contact() {
 
             {/* Hero Image */}
             <div className="h-[150px] w-full -z-10">
-                <img
+                <Image 
                     src="/images/bg.jpg"
                     alt="Background"
+                    width={1920}
+                    height={1080}
                     className="w-full h-full object-cover"
                 />
             </div>
@@ -398,7 +401,7 @@ export default function Contact() {
                 <div>
                     <p className="font-medium text-blue-500">Contact us</p>
                     <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl">Get in touch</h1>
-                    <p className="mt-3 text-gray-500">We'd love to hear from you. Please fill out this form or contact us directly.</p>
+                    <p className="mt-3 text-gray-500">We&apos;ll get back to you as soon as possible. Please fill out this form or contact us directly.</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">

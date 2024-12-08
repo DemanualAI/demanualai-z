@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Point {
   x: number;
@@ -331,7 +332,7 @@ export default function Home() {
           <div className="w-full md:w-[25%] md:ml-4 self-end lg:mt-16 md:mt-8 md:self-end">
             <div className="w-full">
               <p className="text-gray-700 text-right text-sm">
-                Focus on what you do best, and let us handle the rest. We'll put your business 
+                Focus on what you do best, and let us handle the rest. We&apos;ll put your business 
                 on autopilot by automating the repetitive tasks that slow you down. Book a free 
                 consultation today and discover how to free yourself from the busywork and invest 
                 our energy in growth and success
@@ -343,10 +344,13 @@ export default function Home() {
 
       {/* Background Image */}
       <div className="h-[350px] -z-10">
-        <img 
+        <Image 
           src="/images/bg.jpg" 
           alt="Background" 
           className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          priority
         />
       </div>
       
@@ -398,7 +402,7 @@ export default function Home() {
             {/* Button - Now full width and below stats */}
             <div className="w-[50%] self-center mx-auto mt-8">
               <button className="w-full text-white text-lg px-6 py-3 rounded-lg bg-black">
-                Let's Automate Your Business
+                Let&apos;s Automate Your Business
               </button>
             </div>     
           </div>
@@ -422,10 +426,13 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left Column - Image */}
             <div className="w-full lg:w-1/2 h-full">
-              <img 
+              <Image 
                 src="/images/bg.jpg" 
                 alt="Automation Benefits" 
                 className="w-full h-full object-cover rounded-lg shadow-lg"
+                width={1920}
+                height={1080}
+                priority
               />
             </div>
 

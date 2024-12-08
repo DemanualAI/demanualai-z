@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface Point {
     x: number;
@@ -316,9 +317,11 @@ interface Point {
       />
       {/* Hero Image */}
       <div className="h-[150px] w-full -z-10">
-        <img 
+        <Image 
           src="/images/bg.jpg" 
           alt="Background" 
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
       </div>
@@ -351,12 +354,12 @@ interface Point {
                 Join Our Mission to Democratize AI
               </h2>
               <p className="text-gray-700 text-lg mb-6">
-                We're on a mission to make AI accessible, ethical, and truly beneficial for everyone. 
+                We&apos;re on a mission to make AI accessible, ethical, and truly beneficial for everyone. 
                 Our diverse team brings together different perspectives, experiences, and skills to 
                 create AI solutions that work for all communities.
               </p>
               <p className="text-gray-700 text-lg mb-8">
-                If you're passionate about transforming how businesses operate and making AI 
+                If you&apos;re passionate about transforming how businesses operate and making AI 
                 technology more inclusive and impactful, we want to hear from you.
               </p>
               <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">
@@ -366,9 +369,11 @@ interface Point {
 
             {/* Right Column - Image */}
             <div className="w-full lg:w-1/2 h-[400px]">
-              <img 
+              <Image 
                 src="/images/bg.jpg" 
                 alt="Careers" 
+                width={1920}
+                height={1080}
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
             </div>
