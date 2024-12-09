@@ -6,13 +6,11 @@ export interface Author {
 
 export interface BlogPost {
   id: string;
-  slug: string;
   title: string;
   excerpt: string;
-  content: string;
-  heroImage: string;
-  author: Author;
   date: string;
-  readTime: number;
-  tags?: string[];
+  author: string;
+  role: string;
+  image: string;
+  contentHtml?: string;
 } 

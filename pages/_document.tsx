@@ -5,7 +5,6 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="icon" href="images/logo.png" />
-        {/* For better compatibility across different devices, you might want to add these: */}
         <link rel="apple-touch-icon" href="images/logo.png" />
         <link rel="shortcut icon" href="images/logo.png" />
       </Head>

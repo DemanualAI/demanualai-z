@@ -462,6 +462,7 @@ export default function Contact() {
                                         placeholder="John" 
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
+                                        required
                                         className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" 
                                     />
                                 </div>
@@ -485,6 +486,7 @@ export default function Contact() {
                                     placeholder="johndoe@example.com" 
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    required
                                     className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" 
                                 />
                             </div>
@@ -495,6 +497,7 @@ export default function Contact() {
                                     placeholder="Message"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
+                                    required
                                     className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                                 ></textarea>
                             </div>
@@ -504,6 +507,7 @@ export default function Contact() {
                                 className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                             >
                                 {status === 'loading' ? 'Sending...' : 'Send message'}
+                                {status === 'success' && <span className="text-green-500">Message sent successfully!</span>}
                             </button>
                         </form>
                     </div>

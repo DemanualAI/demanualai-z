@@ -40,13 +40,13 @@ const Footer = () => {
             Careers
           </Link>
 
-          <a href="#privacy" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/privacy" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
             Privacy Policy
-          </a>
+          </Link>
 
-          <a href="#terms" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/terms" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
             Terms of Service
-          </a>
+          </Link>
         </div>
 
         <p className="mt-6 text-sm text-gray-600 lg:mt-0">© Copyright 2025 DemanualAI Inc.</p>
