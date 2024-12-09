@@ -451,12 +451,6 @@ export default function Blog({ allPostsData }: { allPostsData: BlogPost[] }) {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <Link href="/admin/login" className="text-sm text-gray-500 hover:underline">
-            Admin Login
-          </Link>
-        </div>
       </div>
     </section>
   );
