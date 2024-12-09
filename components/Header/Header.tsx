@@ -7,6 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
+    { name: 'home', href: '/' },
     { name: 'services', href: '/services' },
     { name: 'about us', href: '/about' },
     { name: 'blog', href: '#' },
@@ -36,7 +37,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm lowercase"
+                  className="text-gray-600 hover:text-blue-600 transition-colors text-base lowercase"
                 >
                   {item.name}
                 </Link>

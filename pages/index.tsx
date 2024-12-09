@@ -400,10 +400,10 @@ export default function Home() {
             </div>
 
             {/* Button - Now full width and below stats */}
-            <div className="w-[50%] self-center mx-auto mt-8">
-              <button className="w-full text-white text-lg px-6 py-3 rounded-lg bg-black">
+            <div className="w-full self-center mx-auto mt-8 md:text-center sm:text-center">
+              <a href="https://calendly.com/demanual-team/scheduled-meeting" target="_blank" rel="noopener noreferrer" className="w-full text-white text-lg px-6 py-3 rounded-lg bg-black">
                 Let&apos;s Automate Your Business
-              </button>
+              </a>
             </div>     
           </div>
           {/* Quote Section */}
@@ -411,7 +411,7 @@ export default function Home() {
           <h3 className="text-xl md:text-2xl font-bold mb-4">
                 The more we automate, the more we need people who think critically and
               </h3>
-          <div className="mt-12 bg-black text-white p-6 rounded-lg">
+          <div className="mt-12 border-2 border-black text-black p-6 rounded-lg">
               <p className="text-sm md:text-base">
                 Hello Demanual AI assists you in identifying and integrating cutting-edge AI solutions, guiding you seamlessly from inception to deployment and beyond.
               </p>

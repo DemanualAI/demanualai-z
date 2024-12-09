@@ -20,9 +20,9 @@ const Footer = () => {
         </a>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
-          <a href="#" className="text-sm text-gray-700 transition-colors duration-300 hover:text-blue-500">
+          <Link href="/" className="footer-link">
             Home
-          </a>
+          </Link>
 
           <Link href="/services/" className="footer-link">
             Services
