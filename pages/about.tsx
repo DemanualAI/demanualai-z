@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Head from 'next/head'
 
 interface Point {
     x: number;
@@ -305,81 +306,87 @@ interface Point {
     }, []);
 
   return (
-    <div className="relative min-h-screen">
-      {/* Grid Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ 
-          pointerEvents: 'none',
-          backgroundColor: '#ffffff'
-        }}
-      />
-      {/* Hero Image */}
-      <div className="h-[150px] w-full -z-10">
-        <Image 
-          src="/images/bg.jpg" 
-          alt="Background" 
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
+    <>
+      <Head>
+        <title>About DemanualAI | AI-Powered Business Automation Experts</title>
+        <meta name="description" content="Meet the team behind DemanualAI. We're AI specialists focused on transforming businesses through intelligent automation and process optimization." />
+      </Head>
+      <div className="relative min-h-screen">
+        {/* Grid Background Canvas */}
+        <canvas
+          ref={canvasRef}
+          className="absolute top-0 left-0 w-full h-full -z-20"
+          style={{ 
+            pointerEvents: 'none',
+            backgroundColor: '#ffffff'
+          }}
         />
-      </div>
-
-      {/* About Us Section */}
-      <div className="container w-[60%] mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-12">About Us</h1>
-        <div>
-          
-            <p className="text-gray-700 text-lg mb-6">
-              At DemanualAI, we are a dynamic team of AI specialists with a deep focus on large 
-              language models (LLMs) and computer vision. We collaborate closely with industries and 
-              businesses to transform their operations by building cutting-edge internal tools, fully 
-              functional websites, and sophisticated AI-powered web applications.              From automating complex workflows to creating interactive AI-driven customer experiences, 
-              we harness the power of machine learning to deliver innovative solutions tailored to the 
-              unique needs of each client. Our expertise enables businesses to unlock new efficiencies 
-              and possibilities through automation and intelligent design.
-            </p>
-       
+        {/* Hero Image */}
+        <div className="h-[150px] w-full -z-10">
+          <Image 
+            src="/images/bg.jpg" 
+            alt="Background" 
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
         </div>
-      </div>
 
-      {/* Careers Section */}
-      <div id="careers" className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Left Column - Content */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Join Our Mission to Democratize AI
-              </h2>
+        {/* About Us Section */}
+        <div className="container w-[60%] mx-auto px-4 py-16">
+          <h1 className="text-4xl font-bold mb-12">About Us</h1>
+          <div>
+            
               <p className="text-gray-700 text-lg mb-6">
-                We&apos;re on a mission to make AI accessible, ethical, and truly beneficial for everyone. 
-                Our diverse team brings together different perspectives, experiences, and skills to 
-                create AI solutions that work for all communities.
+                At DemanualAI, we are a dynamic team of AI specialists with a deep focus on large 
+                language models (LLMs) and computer vision. We collaborate closely with industries and 
+                businesses to transform their operations by building cutting-edge internal tools, fully 
+                functional websites, and sophisticated AI-powered web applications.              From automating complex workflows to creating interactive AI-driven customer experiences, 
+                we harness the power of machine learning to deliver innovative solutions tailored to the 
+                unique needs of each client. Our expertise enables businesses to unlock new efficiencies 
+                and possibilities through automation and intelligent design.
               </p>
-              <p className="text-gray-700 text-lg mb-8">
-                If you&apos;re passionate about transforming how businesses operate and making AI 
-                technology more inclusive and impactful, we want to hear from you.
-              </p>
-              <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">
-                Join Our Team
-              </button>
-            </div>
+         
+          </div>
+        </div>
 
-            {/* Right Column - Image */}
-            <div className="w-full lg:w-1/2 h-[400px]">
-              <Image 
-                src="/images/bg.jpg" 
-                alt="Careers" 
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
+        {/* Careers Section */}
+        <div id="careers" className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row gap-12 items-center">
+              {/* Left Column - Content */}
+              <div className="w-full lg:w-1/2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Join Our Mission to Democratize AI
+                </h2>
+                <p className="text-gray-700 text-lg mb-6">
+                  We&apos;re on a mission to make AI accessible, ethical, and truly beneficial for everyone. 
+                  Our diverse team brings together different perspectives, experiences, and skills to 
+                  create AI solutions that work for all communities.
+                </p>
+                <p className="text-gray-700 text-lg mb-8">
+                  If you&apos;re passionate about transforming how businesses operate and making AI 
+                  technology more inclusive and impactful, we want to hear from you.
+                </p>
+                <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                  Join Our Team
+                </button>
+              </div>
+
+              {/* Right Column - Image */}
+              <div className="w-full lg:w-1/2 h-[400px]">
+                <Image 
+                  src="/images/bg.jpg" 
+                  alt="Careers" 
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 } 

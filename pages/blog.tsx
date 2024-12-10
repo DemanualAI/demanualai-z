@@ -5,6 +5,7 @@ import { BlogPost } from '../types/blog';
 import { useEffect, useRef, useState } from 'react';
 import { Alata } from 'next/font/google';
 import toast from 'react-hot-toast';
+import Head from 'next/head'
 
 
 export async function getStaticProps() {
@@ -387,71 +388,77 @@ export default function Blog({ allPostsData }: { allPostsData: BlogPost[] }) {
   }, []);
 
   return (
-    <section >
-     <canvas
-                ref={canvasRef}
-                className="absolute top-0 left-0 w-full h-full -z-20"
-                style={{
-                    pointerEvents: 'none',
-                    backgroundColor: '#ffffff'
-                }}
-            />
+    <>
+      <Head>
+        <title>Blog | DemanualAI - Insights on Business Automation & AI</title>
+        <meta name="description" content="Stay updated with the latest insights on business automation, AI technology, and digital transformation. Expert articles from DemanualAI's team of specialists." />
+      </Head>
+      <section >
+       <canvas
+                  ref={canvasRef}
+                  className="absolute top-0 left-0 w-full h-full -z-20"
+                  style={{
+                      pointerEvents: 'none',
+                      backgroundColor: '#ffffff'
+                  }}
+              />
 
-            {/* Hero Image */}
-            <div className="h-[150px] w-full -z-10">
-                <Image 
-                    src="/images/bg.jpg"
-                    alt="Background"
-                    width={1920}
-                    height={1080}
-                    className="w-full h-full object-cover"
-                />
-            </div>
-
-      <div className="container px-6 py-10 mx-auto relative">
-        <div className="text-center">
-          <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl">From the blog</h1>
-          <p className="max-w-lg mx-auto mt-4 text-gray-500">
-            Insights and updates from our team on AI automation and business transformation
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
-          {allPostsData.map(({ id, title, excerpt, date, author, role, image }) => (
-            <div className="border-2 border-gray-300 rounded-lg p-2" key={id}>
-              <div className="relative group">
-                <Image 
-                  className="object-cover object-center w-full h-64 rounded-lg lg:h-80 transition-all duration-300 grayscale group-hover:grayscale-0"
-                  src={image}
-                  alt={title}
-                  width={500}
-                  height={300}
-                />
-                <div className="absolute bottom-0 flex p-3 bg-white">
-                  <div className="mx-4">
-                    <h1 className="text-sm text-gray-700">{author}</h1>
-                    <p className="text-sm text-gray-500">{role}</p>
-                  </div>
-                </div>
+              {/* Hero Image */}
+              <div className="h-[150px] w-full -z-10">
+                  <Image 
+                      src="/images/bg.jpg"
+                      alt="Background"
+                      width={1920}
+                      height={1080}
+                      className="w-full h-full object-cover"
+                  />
               </div>
 
-              <h1 className="mt-6 text-xl font-semibold text-gray-800">
-                {title}
-              </h1>
+        <div className="container px-6 py-10 mx-auto relative">
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl">From the blog</h1>
+            <p className="max-w-lg mx-auto mt-4 text-gray-500">
+              Insights and updates from our team on AI automation and business transformation
+            </p>
+          </div>
 
-              <hr className="w-32 my-6 text-blue-500" />
+          <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
+            {allPostsData.map(({ id, title, excerpt, date, author, role, image }) => (
+              <div className="border-2 border-gray-300 rounded-lg p-2" key={id}>
+                <div className="relative group">
+                  <Image 
+                    className="object-cover object-center w-full h-64 rounded-lg lg:h-80 transition-all duration-300 grayscale group-hover:grayscale-0"
+                    src={image}
+                    alt={title}
+                    width={500}
+                    height={300}
+                  />
+                  <div className="absolute bottom-0 flex p-3 bg-white">
+                    <div className="mx-4">
+                      <h1 className="text-sm text-gray-700">{author}</h1>
+                      <p className="text-sm text-gray-500">{role}</p>
+                    </div>
+                  </div>
+                </div>
 
-              <p className="text-sm text-gray-500">
-                {excerpt}
-              </p>
+                <h1 className="mt-6 text-xl font-semibold text-gray-800">
+                  {title}
+                </h1>
 
-              <Link href={`/blog/${id}`} className="inline-block mt-4 text-blue-500 underline hover:text-blue-400">
-                Read more
-              </Link>
-            </div>
-          ))}
+                <hr className="w-32 my-6 text-blue-500" />
+
+                <p className="text-sm text-gray-500">
+                  {excerpt}
+                </p>
+
+                <Link href={`/blog/${id}`} className="inline-block mt-4 text-blue-500 underline hover:text-blue-400">
+                  Read more
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 } 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Head from 'next/head'
 
 interface Point {
     x: number;
@@ -328,69 +329,75 @@ const services = [
 
 
   return (
-    <div className="relative min-h-screen">
-      {/* Grid Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ 
-          pointerEvents: 'none',
-          backgroundColor: '#ffffff'
-        }}
-      />
-
-      {/* Hero Image */}
-      <div className="h-[150px] w-full -z-10">
-        <Image 
-          src="/images/bg.jpg"
-          alt="Services Background"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
+    <>
+      <Head>
+        <title>Services | DemanualAI - Business Process Automation Solutions</title>
+        <meta name="description" content="Explore our comprehensive automation services including workflow automation, AI integration, and process optimization. Transform your business with DemanualAI's cutting-edge solutions." />
+      </Head>
+      <div className="relative min-h-screen">
+        {/* Grid Background Canvas */}
+        <canvas
+          ref={canvasRef}
+          className="absolute top-0 left-0 w-full h-full -z-20"
+          style={{ 
+            pointerEvents: 'none',
+            backgroundColor: '#ffffff'
+          }}
         />
-      </div>
 
-      {/* Services Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex items-center mb-12">
-          <h1 className="text-4xl font-bold">OUR SERVICES</h1>
+        {/* Hero Image */}
+        <div className="h-[150px] w-full -z-10">
+          <Image 
+            src="/images/bg.jpg"
+            alt="Services Background"
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="relative group overflow-hidden rounded-lg"
-            >
-              <div className={`${service.bgClass} p-8 h-full transition-all duration-300 hover:shadow-xl
-                backdrop-blur-md border-[3px] border-gray-400 
-                bg-gradient-to-br from-white/20 to-white/10
-                hover:from-white/30 hover:to-white/20`}
+        {/* Services Grid */}
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex items-center mb-12">
+            <h1 className="text-4xl font-bold">OUR SERVICES</h1>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="relative group overflow-hidden rounded-lg"
               >
-                {service.badge && (
-                  <span className="absolute top-4 right-4 bg-blue-500/80 backdrop-blur-sm text-white text-xs px-2 py-1 rounded">
-                    {service.badge}
-                  </span>
-                )}
-                <div className="mb-4">
-                  <span className="text-gray-800 font-semibold">{service.id}</span>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">{service.title}</h2>
-                <div className="space-y-2">
-                  {service.tags.map((tag, tagIndex) => (
-                    <div 
-                      key={tagIndex}
-                      className="inline-block bg-black/30 backdrop-blur-sm text-gray-800 rounded-full px-4 py-1 text-sm mr-2 mb-2"
-                    >
-                      {tag}
-                    </div>
-                  ))}
+                <div className={`${service.bgClass} p-8 h-full transition-all duration-300 hover:shadow-xl
+                  backdrop-blur-md border-[3px] border-gray-400 
+                  bg-gradient-to-br from-white/20 to-white/10
+                  hover:from-white/30 hover:to-white/20`}
+                >
+                  {service.badge && (
+                    <span className="absolute top-4 right-4 bg-blue-500/80 backdrop-blur-sm text-white text-xs px-2 py-1 rounded">
+                      {service.badge}
+                    </span>
+                  )}
+                  <div className="mb-4">
+                    <span className="text-gray-800 font-semibold">{service.id}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-6">{service.title}</h2>
+                  <div className="space-y-2">
+                    {service.tags.map((tag, tagIndex) => (
+                      <div 
+                        key={tagIndex}
+                        className="inline-block bg-black/30 backdrop-blur-sm text-gray-800 rounded-full px-4 py-1 text-sm mr-2 mb-2"
+                      >
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 } 

@@ -4,6 +4,7 @@ import type { BlogPost } from '../../types/blog';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
+import Head from 'next/head'
 
 interface Point {
     x: number;
@@ -315,7 +316,15 @@ export default function BlogPost({ postData }: Props) {
     }, []);
 
   return (
-    <article className="relative min-h-screen">
+    <>
+      <Head>
+        <title>{`${postData.title} | DemanualAI Blog`}</title>
+        <meta name="description" content={postData.excerpt} />
+        <meta property="og:title" content={postData.title} />
+        <meta property="og:description" content={postData.excerpt} />
+        <meta property="og:image" content={postData.image} />
+      </Head>
+      <article className="relative min-h-screen">
         <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full -z-20"
@@ -369,6 +378,7 @@ export default function BlogPost({ postData }: Props) {
         </div>
       </div>
     </article>
+    </>
   );
 }
 
