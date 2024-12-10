@@ -4,6 +4,8 @@ import Footer from '../Footer/Footer';
 import Head from 'next/head';
 import { Alata } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/next';
+
 
 const alata = Alata({
   weight: '400',
@@ -27,6 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Header />
         <main className="flex-grow pt-20">
           {children}
+          <Analytics />
         </main>
         <Footer />
       </div>
