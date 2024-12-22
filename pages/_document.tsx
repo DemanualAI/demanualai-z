@@ -29,6 +29,26 @@ export default function Document(props: DocumentProps) {
         {/* Language alternatives */}
         <link rel="alternate" hrefLang="en" href="https://demanualai.com" />
         <link rel="alternate" hrefLang="x-default" href="https://demanualai.com" />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '67686a6af6a4fb4536568e13' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                  });
+                }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+                v.type = "text/javascript"; 
+                s.parentNode.insertBefore(v, s);
+              })(document, 'script');
+            `
+          }}
+        />
       </Head>
       <body>
         <Main />
